@@ -859,7 +859,7 @@ footer a:hover{text-decoration:underline}
      assets/videos/hero.mp4 (and optionally a poster at assets/videos/hero.jpg):
      until that file exists the stage shows a placeholder, and no markup has to
      change when it arrives. -->
-<section class="stage vslot is-empty" id="stage" aria-label="Teaser video">
+<section class="stage vslot" id="stage" aria-label="Teaser video">
   <video class="stage__video" src="assets/videos/hero.mp4" poster="assets/videos/hero.jpg"
          autoplay loop muted playsinline preload="auto"
          aria-label="GAM rollouts on real robots, playing on a loop"></video>
@@ -922,7 +922,7 @@ footer a:hover{text-decoration:underline}
     </div>
     <!-- Overview reel. Drop it at assets/videos/overview.mp4 (poster optional).
          It starts when scrolled into view and pauses when scrolled away. -->
-    <div class="player vslot is-empty">
+    <div class="player vslot">
       <video src="assets/videos/overview.mp4" poster="assets/videos/overview.jpg"
              loop muted playsinline preload="metadata" data-onview
              aria-label="Overview reel of GAM across the real-robot tasks"></video>
@@ -1374,6 +1374,8 @@ $("#themebtn").addEventListener("click", ()=>{
     const v = slot.querySelector("video");
     if(!v) return;
     /* the file is there once its metadata arrives; until then it is a placeholder */
+    /* the slot shows its poster at once; it only turns into the placeholder if the file is missing */
+    v.addEventListener("error", ()=> slot.classList.add("is-empty"), true);
     v.addEventListener("loadedmetadata", ()=> slot.classList.remove("is-empty"));
     if(reduce){ v.removeAttribute("autoplay"); v.pause(); }
     /* the overview reel plays only while it is on screen */
