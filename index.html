@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="description" content="GAM builds a manipulation policy on a frozen promptable 3D detector: language, points and boxes all resolve to the same object-centric observation. 55.3% on RoboTwin 2.0, 0.61 on LIBERO-PRO, 17/20 under visual shift on a bimanual YAM.">
 <meta name="author" content="Gehao Zhang, Weikai Huang, Shailesh Shailesh, Yiyan Peng, Jiafei Duan, Ranjay Krishna">
 <link rel="canonical" href="https://grounded-action-model.github.io/">
@@ -887,7 +886,7 @@ footer a:hover{text-decoration:underline}
     </p>
 
     <div class="btnrow">
-      <a class="btn" href="#" aria-disabled="true">Paper <span class="sub">soon</span></a>
+      <a class="btn primary" href="https://arxiv.org/abs/2609.23863" target="_blank" rel="noopener">Paper <span class="sub">arXiv</span></a>
       <a class="btn" href="#bibtex">BibTeX</a>
     </div>
   </div>
@@ -1298,8 +1297,16 @@ footer a:hover{text-decoration:underline}
       <h2>BibTeX</h2>
     </div>
     <div class="bib">
-      <button class="btn copy ui" id="copybib" type="button" hidden>Copy</button>
-      <pre id="bibtext" style="color:var(--muted)">Coming soon.</pre>
+      <button class="btn copy ui" id="copybib" type="button">Copy</button>
+      <pre id="bibtext">@misc{zhang2026groundedactionmodel3d,
+  title         = {Grounded Action Model: 3D Grounding as a Foundation for Robotics},
+  author        = {Gehao Zhang and Weikai Huang and Shailesh Shailesh and Yiyan Peng and Jiafei Duan and Ranjay Krishna},
+  year          = {2026},
+  eprint        = {2609.23863},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2609.23863}
+}</pre>
     </div>
   </div>
 </section>
@@ -1308,7 +1315,7 @@ footer a:hover{text-decoration:underline}
 
 <footer>
   <div class="wrap footin">
-    <span>Grounded Action Model · under review at ICRA 2027. All numbers on this page are from the submitted manuscript.</span>
+    <span>Grounded Action Model · <a href="https://arxiv.org/abs/2609.23863" target="_blank" rel="noopener">arXiv:2609.23863</a></span>
     <button class="themebtn" id="themebtn" type="button">Theme</button>
   </div>
 </footer>
